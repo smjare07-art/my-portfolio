@@ -1,0 +1,199 @@
+.about-wrap{
+  padding:120px 80px;
+  background:#eef2f7;
+}
+
+.section-pill{
+  display:inline-block;
+  padding:6px 14px;
+  border-radius:999px;
+  background:#f1f5f9;
+  font-size:14px;
+  margin-bottom:16px;
+}
+
+.about-title{
+  font-size:42px;
+  font-weight:800;
+  color:#7c3aed;
+  line-height:1.25;
+  margin-bottom:60px;
+}
+
+/* STATS */
+.about-stats{
+  display:grid;
+  grid-template-columns:repeat(3,1fr);
+  gap:40px;
+  margin-bottom:60px;
+}
+
+.stat-card{
+  background:#f7f9fc;
+  border-radius:24px;
+  padding:24px;
+  text-align:center;
+}
+
+.stat-card h3{
+  font-size:40px;
+  font-weight:800;
+  color:#7c3aed;
+}
+
+.stat-card p{
+  margin-top:6px;
+  color:#6b7280;
+}
+
+/* TEXT + INFO */
+.about-info{
+  display:grid;
+  grid-template-columns:2fr 1fr;
+  gap:60px;
+  margin-bottom:100px;
+}
+
+.about-text{
+  color:#374151;
+  line-height:1.7;
+}
+
+.about-contact p{
+  margin-bottom:16px;
+}
+
+.download-btn{
+  margin-top:20px;
+  padding:10px 20px;
+  border-radius:999px;
+  border:none;
+  background:linear-gradient(90deg,#8b5cf6,#7c3aed);
+  color:#fff;
+  font-weight:600;
+}
+
+/* SERVICES */
+.services-grid{
+  display:grid;
+  grid-template-columns:repeat(2,1fr);
+  gap:40px;
+}
+
+.service-card{
+  background:#f7f9fc;
+  border-radius:28px;
+  padding:28px;
+  box-shadow:0 20px 40px rgba(0,0,0,.06);
+}
+
+.service-card h4{
+  font-size:20px;
+  font-weight:700;
+  margin-bottom:6px;
+}
+
+.service-card span{
+  font-size:13px;
+  color:#7c3aed;
+}
+
+.service-card p{
+  margin:16px 0;
+  color:#4b5563;
+}
+
+.service-card img{
+  width:100%;
+  border-radius:16px;
+}
+.about-wrap{
+  padding:120px 80px;
+  background:#eef2f7;
+}
+
+.section-pill{
+  padding:6px 14px;
+  border-radius:999px;
+  background:#f1f5f9;
+  font-size:14px;
+  margin-bottom:16px;
+  display:inline-block;
+}
+
+.about-title{
+  font-size:42px;
+  font-weight:800;
+  background:linear-gradient(90deg,#6d28d9,#8b5cf6);
+  -webkit-background-clip:text;
+  color:transparent;
+  margin-bottom:60px;
+}
+
+/* STATS */
+.about-stats{
+  display:grid;
+  grid-template-columns:repeat(3,1fr);
+  gap:40px;
+  margin-bottom:60px;
+}
+
+.stat-card{
+  background:#f7f9fc;
+  border-radius:24px;
+  padding:28px;
+  text-align:center;
+  box-shadow:0 20px 40px rgba(0,0,0,.06);
+}
+
+/* INFO */
+.about-info{
+  display:grid;
+  grid-template-columns:2fr 1fr;
+  gap:60px;
+  margin-bottom:100px;
+}
+
+.about-text{
+  color:#374151;
+  line-height:1.7;
+}
+
+.download-btn{
+  margin-top:20px;
+  padding:12px 24px;
+  border-radius:999px;
+  background:linear-gradient(90deg,#8b5cf6,#7c3aed);
+  color:#fff;
+  font-weight:600;
+  border:none;
+}
+
+/* SERVICES */
+.services-grid{
+  display:grid;
+  grid-template-columns:repeat(2,1fr);
+  gap:40px;
+}
+
+.service-card{
+  background:#f7f9fc;
+  border-radius:28px;
+  padding:28px;
+  box-shadow:0 20px 40px rgba(0,0,0,.06);
+}
+
+.service-card img{
+  width:100%;
+  border-radius:16px;
+  margin-top:16px;
+}
+
+/* MOBILE */
+@media(max-width:900px){
+  .about-info,
+  .services-grid,
+  .about-stats{
+    grid-template-columns:1fr;
+  }
+}

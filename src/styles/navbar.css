@@ -1,0 +1,120 @@
+/* ===============================
+   NAVBAR WRAPPER
+================================ */
+.navbar {
+  position: fixed;
+  top: 20px;
+  left: 50%;
+  transform: translateX(-50%);
+  z-index: 100;
+}
+
+/* ===============================
+   NAVBAR CONTAINER
+================================ */
+.navbar-box {
+  position: relative;
+  display: flex;
+  align-items: center;
+  gap: 6px;
+  padding: 8px;
+  border-radius: 9999px;
+  background: rgba(255, 255, 255, 0.75);
+  backdrop-filter: blur(18px);
+  box-shadow: 0 12px 36px rgba(0, 0, 0, 0.08);
+}
+
+/* ===============================
+   SLIDING ACTIVE INDICATOR
+================================ */
+.nav-indicator {
+  position: absolute;
+  left: 0;
+  top: 6px;
+  height: calc(100% - 12px);
+  background: #ffffff;
+  border-radius: 9999px;
+  border: 1px solid #e5e7eb;
+  transition: all 0.35s ease;
+  z-index: 0;
+}
+
+/* ===============================
+   NAV ITEMS
+================================ */
+.nav-item {
+  position: relative;
+  z-index: 1;
+  padding: 8px 20px;
+  font-size: 14px;
+  font-weight: 500;
+  color: #6b7280;
+  cursor: pointer;
+  transition: color 0.25s ease;
+  white-space: nowrap;
+}
+
+.nav-item:hover {
+  color: #000;
+}
+
+.nav-item.active {
+  color: #000;
+}
+
+/* ===============================
+   THEME BUTTON
+================================ */
+.theme-btn {
+  height: 40px;
+  width: 40px;
+  border-radius: 50%;
+  display: grid;
+  place-items: center;
+  color: #4b5563;
+  cursor: pointer;
+  z-index: 1;
+}
+
+.theme-btn:hover {
+  background: #f3f4f6;
+}
+
+/* ===============================
+   CTA BUTTON
+================================ */
+.cta-btn {
+  margin-left: 4px;
+  padding: 8px 22px;
+  border-radius: 9999px;
+  font-size: 14px;
+  font-weight: 600;
+  color: #fff;
+  background: linear-gradient(90deg, #8b5cf6, #7c3aed);
+  box-shadow: 0 6px 18px rgba(124, 58, 237, 0.35);
+  transition: transform 0.2s ease;
+  z-index: 1;
+}
+
+.cta-btn:hover {
+  transform: scale(1.05);
+}
+
+/* ===============================
+   MOBILE OPTIMIZATION
+================================ */
+@media (max-width: 768px) {
+  .navbar {
+    top: auto;
+    bottom: 16px;
+  }
+
+  .cta-btn {
+    display: none;
+  }
+
+  .nav-item {
+    padding: 8px 14px;
+    font-size: 13px;
+  }
+}
