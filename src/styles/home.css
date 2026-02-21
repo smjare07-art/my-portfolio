@@ -388,3 +388,96 @@ body.dark .blur.pink {
   top: 0;
   background: rgba(236,72,153,.45);
 }
+/* ===============================
+   TABLET RESPONSIVE
+================================ */
+@media (max-width: 1100px) {
+
+  .home-wrap {
+    grid-template-columns: 320px 1fr;
+    gap: 60px;
+    padding: 120px 40px 40px;
+  }
+
+  .hero h1 {
+    font-size: 48px;
+  }
+
+}
+
+
+/* ===============================
+   MOBILE RESPONSIVE
+================================ */
+@media (max-width: 768px) {
+
+  .home-wrap {
+    grid-template-columns: 1fr;
+    gap: 40px;
+    padding: 120px 20px 80px;
+    text-align: center;
+  }
+
+  /* Profile card center */
+  .profile-card {
+    max-width: 420px;
+    margin: 0 auto;
+  }
+
+  /* Avatar smaller */
+  .avatar img {
+    width: 160px;
+  }
+
+  /* Hero heading responsive */
+  .hero h1 {
+    font-size: 36px;
+    line-height: 1.2;
+  }
+
+  /* Buttons center */
+  .actions {
+    justify-content: center;
+    flex-wrap: wrap;
+  }
+
+  /* Blur reduce */
+  .blur {
+    width: 260px;
+    height: 260px;
+    filter: blur(100px);
+  }
+
+}
+
+
+/* ===============================
+   SMALL MOBILE
+================================ */
+@media (max-width: 480px) {
+
+  .hero h1 {
+    font-size: 28px;
+  }
+
+  .profile-top h2 {
+    font-size: 18px;
+  }
+
+  .avatar img {
+    width: 130px;
+  }
+
+  .profile-card {
+    padding: 18px;
+  }
+
+}
+@media (max-width: 768px) {
+  .profile-card {
+    order: 2;
+  }
+  .hero {
+    order: 1;
+  }
+}
