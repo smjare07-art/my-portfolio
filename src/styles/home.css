@@ -203,3 +203,188 @@
   background: #f7f9fc;
 }
 
+/* ===============================
+   DARK BACKGROUND
+================================ */
+body.dark .home-wrap {
+  background: #0f172a;
+}
+
+/* ===============================
+   DARK PROFILE CARD
+================================ */
+body.dark .profile-card {
+  background: rgba(30, 41, 59, 0.7);
+  box-shadow:
+    0 25px 60px rgba(0,0,0,.5),
+    inset 0 1px 0 rgba(255,255,255,.05);
+  backdrop-filter: blur(20px);
+}
+
+/* ===============================
+   DARK ICON CIRCLE
+================================ */
+body.dark .icon {
+  background: rgba(255,255,255,0.05);
+  border: 2px solid #8b5cf6;
+}
+
+/* ===============================
+   DARK INFO TEXT
+================================ */
+body.dark .info span {
+  color: #94a3b8;
+}
+
+body.dark .info p {
+  color: #ffffff;
+}
+
+/* ===============================
+   DARK SOCIAL ICONS
+================================ */
+body.dark .socials a {
+  border: 1px solid rgba(255,255,255,0.1);
+  color: #94a3b8;
+}
+
+body.dark .socials a:hover {
+  color: #8b5cf6;
+  border-color: #8b5cf6;
+  background: rgba(139,92,246,0.15);
+}
+
+/* ===============================
+   DARK HERO TEXT
+================================ */
+body.dark .meet {
+  background: rgba(255,255,255,0.05);
+  color: #cbd5e1;
+}
+
+body.dark .hero h1 {
+  background: linear-gradient(90deg,#a78bfa,#c4b5fd);
+  -webkit-background-clip: text;
+  background-clip: text;
+  color: transparent;
+}
+
+/* ===============================
+   DARK BUTTONS
+================================ */
+body.dark .outline {
+  border: 1px solid rgba(255,255,255,0.15);
+  color: #e2e8f0;
+}
+
+body.dark .outline:hover {
+  background: rgba(255,255,255,0.05);
+}
+
+body.dark .primary,
+body.dark .work-btn {
+  background: linear-gradient(90deg,#6366f1,#8b5cf6);
+  box-shadow: 0 10px 25px rgba(99,102,241,.4);
+}
+body.dark .blur.purple {
+  background: rgba(139,92,246,.55);
+}
+
+body.dark .blur.pink {
+  background: rgba(236,72,153,.55);
+}
+.home-wrap {
+  min-height: 100vh;
+  background: linear-gradient(-45deg,#eef2f7,#e0e7ff,#f5f3ff,#eef2f7);
+  background-size: 400% 400%;
+  animation: gradientMove 15s ease infinite;
+  display: grid;
+  grid-template-columns: 360px 1fr;
+  gap: 100px;
+  padding: 140px 80px 40px;
+  position: relative;
+  overflow: hidden;
+}
+
+@keyframes gradientMove {
+  0% {background-position:0% 50%;}
+  50% {background-position:100% 50%;}
+  100% {background-position:0% 50%;}
+}
+
+.profile-card {
+  background: rgba(255,255,255,0.7);
+  backdrop-filter: blur(25px);
+  border-radius: 28px;
+  padding: 24px;
+  box-shadow: 0 30px 60px rgba(0,0,0,.1);
+  transition: transform 0.2s ease;
+}
+
+.profile-card:hover {
+  box-shadow: 0 40px 80px rgba(124,58,237,.3);
+}
+
+.avatar {
+  margin: 24px 0;
+  background: linear-gradient(135deg,#c4b5fd,#a78bfa);
+  border-radius: 24px;
+  padding: 20px;
+  display: grid;
+  place-items: center;
+}
+
+.work-btn {
+  width: 100%;
+  padding: 12px;
+  border-radius: 999px;
+  font-weight: 600;
+  color: #fff;
+  background: linear-gradient(90deg,#8b5cf6,#7c3aed);
+  position: relative;
+  overflow: hidden;
+}
+
+.work-btn::before {
+  content: "";
+  position: absolute;
+  top: 0;
+  left: -100%;
+  width: 100%;
+  height: 100%;
+  background: linear-gradient(120deg,transparent,rgba(255,255,255,.4),transparent);
+  transition: 0.6s;
+}
+
+.work-btn:hover::before {
+  left: 100%;
+}
+
+.hero h1 {
+  font-size: 64px;
+  line-height: 1.1;
+  font-weight: 800;
+  background: linear-gradient(90deg,#6d28d9,#8b5cf6);
+  -webkit-background-clip: text;
+  color: transparent;
+}
+
+.blur {
+  position: absolute;
+  width: 420px;
+  height: 420px;
+  filter: blur(140px);
+  z-index: 1;
+}
+
+.blur.purple {
+  right: 120px;
+  top: 140px;
+  background: rgba(139,92,246,.45);
+}
+
+.blur.pink {
+  left: -120px;
+  top: 0;
+  background: rgba(236,72,153,.45);
+}

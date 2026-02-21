@@ -197,3 +197,174 @@
     grid-template-columns:1fr;
   }
 }
+/* ===============================
+   DARK ABOUT WRAP
+================================ */
+body.dark .about-wrap{
+  background:#0f172a;
+}
+
+/* ===============================
+   DARK SECTION PILL
+================================ */
+body.dark .section-pill{
+  background:rgba(255,255,255,0.05);
+  color:#cbd5e1;
+}
+
+/* ===============================
+   DARK TITLE
+================================ */
+body.dark .about-title{
+  background:linear-gradient(90deg,#a78bfa,#c4b5fd);
+  -webkit-background-clip:text;
+  color:transparent;
+}
+
+/* ===============================
+   DARK STAT CARDS
+================================ */
+body.dark .stat-card{
+  background:rgba(30,41,59,0.7);
+  box-shadow:
+    0 25px 60px rgba(0,0,0,.5),
+    inset 0 1px 0 rgba(255,255,255,.05);
+  backdrop-filter:blur(18px);
+}
+
+body.dark .stat-card h3{
+  color:#a78bfa;
+}
+
+body.dark .stat-card p{
+  color:#94a3b8;
+}
+
+/* ===============================
+   DARK ABOUT TEXT
+================================ */
+body.dark .about-text{
+  color:#cbd5e1;
+}
+
+/* ===============================
+   DARK DOWNLOAD BUTTON
+================================ */
+body.dark .download-btn{
+  background:linear-gradient(90deg,#6366f1,#8b5cf6);
+  box-shadow:0 10px 25px rgba(99,102,241,.4);
+}
+
+/* ===============================
+   DARK SERVICE CARDS
+================================ */
+body.dark .service-card{
+  background:rgba(30,41,59,0.75);
+  box-shadow:
+    0 25px 60px rgba(0,0,0,.5),
+    inset 0 1px 0 rgba(255,255,255,.05);
+  backdrop-filter:blur(18px);
+}
+
+body.dark .service-card h4{
+  color:#ffffff;
+}
+
+body.dark .service-card span{
+  color:#a78bfa;
+}
+
+body.dark .service-card p{
+  color:#94a3b8;
+}
+body{
+  transition: background .3s ease, color .3s ease;
+}
+.about-wrap {
+  padding: 120px 80px;
+  background: linear-gradient(-45deg,#eef2f7,#e0e7ff,#f5f3ff);
+}
+
+.about-title {
+  font-size: 42px;
+  font-weight: 800;
+  background: linear-gradient(90deg,#6d28d9,#8b5cf6);
+  -webkit-background-clip: text;
+  color: transparent;
+  margin-bottom: 60px;
+}
+
+.about-stats {
+  display: grid;
+  grid-template-columns: repeat(3,1fr);
+  gap: 40px;
+  margin-bottom: 60px;
+}
+
+.stat-card {
+  background: rgba(255,255,255,0.7);
+  backdrop-filter: blur(15px);
+  border-radius: 20px;
+  padding: 28px;
+  text-align: center;
+  transition: all .3s ease;
+}
+
+.stat-card:hover {
+  transform: translateY(-6px);
+  box-shadow: 0 20px 60px rgba(124,58,237,.3);
+}
+
+.about-info {
+  display: grid;
+  grid-template-columns: 2fr 1fr;
+  gap: 60px;
+  margin-bottom: 80px;
+}
+
+.about-text p {
+  margin-bottom: 16px;
+  line-height: 1.7;
+}
+
+.highlight {
+  font-weight: 600;
+  color: #7c3aed;
+}
+
+.download-btn {
+  padding: 12px 24px;
+  border-radius: 999px;
+  background: linear-gradient(90deg,#8b5cf6,#7c3aed);
+  color: #fff;
+  text-decoration: none;
+  display: inline-block;
+  margin-top: 20px;
+}
+
+.services-grid {
+  display: grid;
+  grid-template-columns: repeat(2,1fr);
+  gap: 40px;
+}
+
+.service-card {
+  background: rgba(255,255,255,0.7);
+  backdrop-filter: blur(15px);
+  border-radius: 24px;
+  padding: 28px;
+  transition: all .3s ease;
+}
+
+.service-card:hover {
+  transform: translateY(-8px);
+  box-shadow: 0 25px 60px rgba(124,58,237,.3);
+}
+
+@media(max-width:900px){
+  .about-info,
+  .services-grid,
+  .about-stats{
+    grid-template-columns:1fr;
+  }
+}

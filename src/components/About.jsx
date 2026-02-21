@@ -5,22 +5,22 @@ import "../styles/about.css";
 
 const fadeUp = {
   hidden: { opacity: 0, y: 40 },
-  visible: (i = 1) => ({
+  show: (i = 1) => ({
     opacity: 1,
     y: 0,
-    transition: { delay: i * 0.12, duration: 0.6, ease: "easeOut" },
+    transition: { delay: i * 0.15, duration: 0.6 },
   }),
 };
 
 export default function About() {
   return (
     <section id="about" className="about-wrap">
-      {/* TOP */}
+
       <motion.span
         className="section-pill"
-        variants={fadeUp}
         initial="hidden"
-        whileInView="visible"
+        whileInView="show"
+        variants={fadeUp}
         viewport={{ once: true }}
       >
         ✦ About Me
@@ -28,20 +28,20 @@ export default function About() {
 
       <motion.h2
         className="about-title"
-        variants={fadeUp}
         initial="hidden"
-        whileInView="visible"
+        whileInView="show"
+        variants={fadeUp}
         viewport={{ once: true }}
       >
-        Turning complex problems <br /> into simple design
+        Building scalable systems <br /> with real-world impact
       </motion.h2>
 
       {/* STATS */}
       <div className="about-stats">
         {[
-          { n: "100+", t: "Designs" },
-          { n: "1+", t: "Years of experience" },
-          { n: "30+", t: "Projects done" },
+          { n: "8+", t: "Major Projects" },
+          { n: "2", t: "Internships" },
+          { n: "10+", t: "ML Experiments" },
         ].map((s, i) => (
           <motion.div
             key={i}
@@ -49,9 +49,8 @@ export default function About() {
             custom={i}
             variants={fadeUp}
             initial="hidden"
-            whileInView="visible"
+            whileInView="show"
             viewport={{ once: true }}
-            whileHover={{ y: -6, scale: 1.03 }}
           >
             <h3>{s.n}</h3>
             <p>{s.t}</p>
@@ -59,42 +58,54 @@ export default function About() {
         ))}
       </div>
 
-      {/* TEXT + INFO */}
+      {/* MAIN INFO */}
       <div className="about-info">
-        <motion.p
+        <motion.div
           className="about-text"
           variants={fadeUp}
           initial="hidden"
-          whileInView="visible"
+          whileInView="show"
           viewport={{ once: true }}
         >
-          I wonder if I’ve been changed in the night? Let me think.
-          Was I the same when I got up this morning? I almost think I
-          can remember feeling a little different.
-          <br /><br />
-          Be who you would seem to be — never imagine yourself not to be
-          otherwise than what you had been.
-        </motion.p>
+          <p>
+            I’m a Computer Science student passionate about
+            <strong> Artificial Intelligence, System Design, and Full Stack Development</strong>.
+          </p>
+
+          <p>
+            I focus on building scalable software solutions —
+            from CNN-based crop disease detection systems
+            to production-ready ML web applications.
+          </p>
+
+          <p>
+            My goal is to engineer impactful technology that solves
+            real-world problems efficiently and at scale.
+          </p>
+
+          <p className="highlight">
+            Consistency &gt; Motivation · Execution &gt; Ideas
+          </p>
+        </motion.div>
 
         <motion.div
           className="about-contact"
           variants={fadeUp}
           initial="hidden"
-          whileInView="visible"
+          whileInView="show"
           viewport={{ once: true }}
         >
           <p><strong>Name</strong><br />Shubham Jare</p>
-          <p><strong>Phone</strong><br />+91 **********</p>
-          <p><strong>Email</strong><br />shubham@gmail.com</p>
+          <p><strong>Email</strong><br />smjare07@gmail.com</p>
           <p><strong>Location</strong><br />Maharashtra, India</p>
 
-          <motion.button
+          <a
+            href="/shubham-jare-cv.pdf"
+            target="_blank"
             className="download-btn"
-            whileHover={{ scale: 1.05 }}
-            whileTap={{ scale: 0.95 }}
           >
-            Download CV ⬇
-          </motion.button>
+            View CV ⬇
+          </a>
         </motion.div>
       </div>
 
@@ -102,28 +113,20 @@ export default function About() {
       <div className="services-grid">
         {[
           {
-            title: "Frontend development",
-            tag: "UI/UX · Design to Code",
-            desc: "Building clean, scalable, animated frontends.",
-            img: "/service1.png",
+            title: "Software Engineering",
+            desc: "Designing maintainable, scalable backend systems.",
           },
           {
-            title: "Digital art & design",
-            tag: "Illustrations · AI",
-            desc: "Creative visuals using Figma & Photoshop.",
-            img: "/service2.png",
+            title: "Full Stack Development",
+            desc: "Modern web apps using React, Next.js & Flask.",
           },
           {
-            title: "Video Editing",
-            tag: "Reels · YouTube",
-            desc: "Engaging video edits with modern tools.",
-            img: "/service3.png",
+            title: "Artificial Intelligence",
+            desc: "Deep learning & computer vision applications.",
           },
           {
-            title: "Brand Identity",
-            tag: "Logo · Style Guide",
-            desc: "Minimal and professional branding.",
-            img: "/service4.png",
+            title: "Data Structures & Algorithms",
+            desc: "Optimized logic & performance-driven coding.",
           },
         ].map((s, i) => (
           <motion.div
@@ -132,14 +135,11 @@ export default function About() {
             custom={i}
             variants={fadeUp}
             initial="hidden"
-            whileInView="visible"
+            whileInView="show"
             viewport={{ once: true }}
-            whileHover={{ y: -8 }}
           >
             <h4>{s.title}</h4>
-            <span>{s.tag}</span>
             <p>{s.desc}</p>
-            <img src={s.img} alt={s.title} />
           </motion.div>
         ))}
       </div>

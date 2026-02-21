@@ -1,40 +1,95 @@
 "use client";
 
+import { useState, useEffect } from "react";
+import { motion, AnimatePresence } from "framer-motion";
 import "../styles/Testimonials.css";
 
 export default function Testimonials() {
+
+  const testimonials = [
+    {
+      img: "/person1.jpg",
+      name: "Project Mentor",
+      role: "AI & Web Development",
+      text: "Shubham built a CNN-based crop disease detection system with strong backend integration and clean architecture.",
+    },
+    {
+      img: "/person2.jpg",
+      name: "Frontend Lead",
+      role: "Internship Team",
+      text: "His React and Next.js implementations are clean, scalable and optimized for performance.",
+    },
+    {
+      img: "/person3.jpg",
+      name: "Cyber Security Mentor",
+      role: "Security Internship",
+      text: "Demonstrates analytical thinking and strong understanding of system-level security concepts.",
+    },
+    {
+      img: "/person4.jpg",
+      name: "Hackathon Teammate",
+      role: "Full Stack Collaboration",
+      text: "Quick problem solver who writes structured production-ready code.",
+    },
+  ];
+
+  const [index, setIndex] = useState(0);
+
+  useEffect(() => {
+    const interval = setInterval(() => {
+      setIndex((prev) => (prev + 1) % testimonials.length);
+    }, 4000);
+
+    return () => clearInterval(interval);
+  }, []);
+
   return (
     <section id="testimonials" className="testimonials-wrap">
+
       <span className="section-pill">✦ Testimonials</span>
 
       <h2 className="testimonials-title">
-        Office colleagues say <br /> about me
+        What mentors & teammates <br /> say about me
       </h2>
 
-      <div className="testimonial-card">
-        <div className="testimonial-header">
-          <img src="/person1.jpg" alt="person" />
-          <div>
-            <h4>Kashish Manhas</h4>
-            <p>Sr. Web Designer · Orient Outsourcing Consultants Pvt. Ltd.</p>
-          </div>
-        </div>
+      <div className="testimonial-container">
 
-        <p className="testimonial-text">
-          Working with Shantanu on web design projects has always been smooth.
-          He’s creative, detail-oriented, and consistently delivers clean,
-          responsive designs on time.
-        </p>
+        <AnimatePresence mode="wait">
+          <motion.div
+            key={index}
+            className="testimonial-card"
+            initial={{ opacity: 0, x: 60 }}
+            animate={{ opacity: 1, x: 0 }}
+            exit={{ opacity: 0, x: -60 }}
+            transition={{ duration: 0.5 }}
+          >
+            <div className="testimonial-header">
+              <img src={testimonials[index].img} alt="person" />
+              <div>
+                <h4>{testimonials[index].name}</h4>
+                <p>{testimonials[index].role}</p>
+              </div>
+            </div>
 
-        <a href="#" className="project-link">
-          Project Page →
-        </a>
+            <p className="testimonial-text">
+              {testimonials[index].text}
+            </p>
+          </motion.div>
+        </AnimatePresence>
+
       </div>
 
-      <div className="testimonial-nav">
-        <button>‹</button>
-        <button>›</button>
+      {/* DOTS */}
+      <div className="testimonial-dots">
+        {testimonials.map((_, i) => (
+          <span
+            key={i}
+            className={i === index ? "active-dot" : ""}
+            onClick={() => setIndex(i)}
+          />
+        ))}
       </div>
+
     </section>
   );
 }

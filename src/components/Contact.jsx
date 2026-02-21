@@ -1,42 +1,122 @@
 "use client";
 
+import { useState } from "react";
+import { motion } from "framer-motion";
 import "../styles/Contact.css";
+import {
+  FaLinkedinIn,
+  FaInstagram,
+  FaYoutube,
+  FaGithub,
+} from "react-icons/fa";
 
 export default function Contact() {
+
+  const [formData, setFormData] = useState({
+    name: "",
+    company: "",
+    email: "",
+    phone: "",
+    message: "",
+  });
+
+  const [submitted, setSubmitted] = useState(false);
+
+  const handleChange = (e) => {
+    setFormData({
+      ...formData,
+      [e.target.name]: e.target.value,
+    });
+  };
+
+  const handleSubmit = (e) => {
+    e.preventDefault();
+
+    const text = `
+Name: ${formData.name}
+Company: ${formData.company}
+Email: ${formData.email}
+Phone: ${formData.phone}
+
+Message:
+${formData.message}
+    `;
+
+    const encodedText = encodeURIComponent(text);
+
+    setSubmitted(true);
+
+    setTimeout(() => {
+      window.open(
+        `https://wa.me/6283163861179?text=${encodedText}`,
+        "_blank"
+      );
+      setSubmitted(false);
+    }, 1200);
+  };
+
   return (
     <section id="contact" className="contact-wrap">
+
       <span className="section-pill">✦ Contact</span>
 
       <h2 className="contact-title">
-        Let’s make something <br /> awesome together!
+        Let’s build something impactful
       </h2>
 
-      <form className="contact-form">
-        <input type="text" placeholder="Your Name*" />
-        <input type="text" placeholder="Company Name" />
-        <input type="email" placeholder="Email Address*" />
-        <input type="text" placeholder="Phone Number*" />
-        <textarea placeholder="A Few Words*" rows="4"></textarea>
+      <motion.form
+        className="contact-form"
+        onSubmit={handleSubmit}
+        initial={{ opacity: 0, y: 40 }}
+        whileInView={{ opacity: 1, y: 0 }}
+        viewport={{ once: true }}
+      >
 
-        <button type="submit" className="send-btn">
-          Send Message →
-        </button>
-      </form>
+        {["name","company","email","phone"].map((field, i) => (
+          <div className="input-group" key={i}>
+            <input
+              type={field === "email" ? "email" : "text"}
+              name={field}
+              required={field !== "company"}
+              onChange={handleChange}
+            />
+            <label>{field.charAt(0).toUpperCase() + field.slice(1)}</label>
+          </div>
+        ))}
+
+        <div className="input-group full">
+          <textarea
+            name="message"
+            rows="4"
+            required
+            onChange={handleChange}
+          ></textarea>
+          <label>Message</label>
+        </div>
+
+        <motion.button
+          type="submit"
+          className="send-btn"
+          whileHover={{ scale: 1.05 }}
+          whileTap={{ scale: 0.95 }}
+        >
+          {submitted ? "Sending..." : "Send Message →"}
+        </motion.button>
+
+      </motion.form>
 
       <div className="contact-socials">
-        <span>in</span>
-        <span>Be</span>
-        <span>◎</span>
-        <span>▶</span>
-        <span>P</span>
+        <a href="https://www.linkedin.com/in/shubham-jare-232645362" target="_blank"><FaLinkedinIn /></a>
+        <a href="https://www.instagram.com/devwithshubham_" target="_blank"><FaInstagram /></a>
+        <a href="https://www.youtube.com/channel/UC1fxqmDsUQXDxATTBtwvoCg" target="_blank"><FaYoutube /></a>
+        <a href="https://github.com/smjare07-art" target="_blank"><FaGithub /></a>
       </div>
 
       <p className="contact-text">
-        Looking to elevate your product with intuitive and impactful design?
-        I’d love to collaborate! If you're interested in hiring me as a UI/UX
-        Designer or want to explore my design portfolio, drop me a mail and
-        I’ll get back as soon as possible.
+        Looking to collaborate on a project or discuss opportunities?
+        Fill the form and your message will reach me directly on WhatsApp.
       </p>
+
     </section>
   );
 }

@@ -65,3 +65,209 @@
   color:#6b7280;
   line-height:1.7;
 }
+/* ===============================
+   DARK CONTACT WRAP
+================================ */
+body.dark .contact-wrap {
+  background: #0f172a;
+}
+
+/* ===============================
+   DARK TITLE
+================================ */
+body.dark .contact-title {
+  background: linear-gradient(90deg,#a78bfa,#c4b5fd);
+  -webkit-background-clip: text;
+  background-clip: text;
+  color: transparent;
+}
+
+/* ===============================
+   DARK INPUT FIELDS
+================================ */
+body.dark .contact-form input,
+body.dark .contact-form textarea {
+  background: rgba(30, 41, 59, 0.7);
+  border: 1px solid rgba(255,255,255,0.08);
+  color: #e2e8f0;
+  backdrop-filter: blur(12px);
+}
+
+body.dark .contact-form input::placeholder,
+body.dark .contact-form textarea::placeholder {
+  color: #94a3b8;
+}
+
+/* ===============================
+   DARK SEND BUTTON
+================================ */
+body.dark .send-btn {
+  background: linear-gradient(90deg,#6366f1,#8b5cf6);
+  box-shadow: 0 10px 25px rgba(99,102,241,.4);
+}
+
+/* ===============================
+   DARK SOCIAL ICONS
+================================ */
+body.dark .contact-socials span {
+  border: 1px solid rgba(255,255,255,0.1);
+  color: #94a3b8;
+  background: rgba(255,255,255,0.03);
+  transition: all 0.25s ease;
+}
+
+body.dark .contact-socials span:hover {
+  color: #8b5cf6;
+  border-color: #8b5cf6;
+  background: rgba(139,92,246,0.15);
+}
+
+/* ===============================
+   DARK TEXT
+================================ */
+body.dark .contact-text {
+  color: #94a3b8;
+}
+body.dark .contact-form input:focus,
+body.dark .contact-form textarea:focus {
+  outline: none;
+  border-color: #8b5cf6;
+  box-shadow: 0 0 0 3px rgba(139,92,246,0.25);
+}
+.contact-socials a {
+  width: 44px;
+  height: 44px;
+  border-radius: 50%;
+  border: 1px solid #d1d5db;
+  display: grid;
+  place-items: center;
+  font-size: 18px;
+  color: #6b7280;
+  transition: all 0.25s ease;
+}
+
+.contact-socials a:hover {
+  color: #7c3aed;
+  border-color: #7c3aed;
+  background: rgba(124, 58, 237, 0.08);
+}
+.contact-wrap {
+  padding: 120px 80px;
+  background: linear-gradient(-45deg,#eef2f7,#e0e7ff,#f5f3ff);
+  text-align: center;
+}
+
+.contact-title {
+  font-size: 42px;
+  font-weight: 800;
+  background: linear-gradient(90deg,#6d28d9,#8b5cf6);
+  -webkit-background-clip: text;
+  color: transparent;
+  margin-bottom: 50px;
+}
+
+.contact-form {
+  max-width: 720px;
+  margin: 0 auto 40px;
+  display: grid;
+  grid-template-columns: 1fr 1fr;
+  gap: 24px;
+  background: rgba(255,255,255,0.6);
+  backdrop-filter: blur(20px);
+  padding: 40px;
+  border-radius: 28px;
+  box-shadow: 0 25px 60px rgba(124,58,237,.2);
+}
+
+/* Floating Inputs */
+.input-group {
+  position: relative;
+}
+
+.input-group.full {
+  grid-column: span 2;
+}
+
+.input-group input,
+.input-group textarea {
+  width: 100%;
+  padding: 16px;
+  border-radius: 14px;
+  border: 1px solid #d1d5db;
+  background: transparent;
+  outline: none;
+  font-size: 14px;
+}
+
+.input-group label {
+  position: absolute;
+  left: 14px;
+  top: 14px;
+  font-size: 14px;
+  color: #6b7280;
+  transition: 0.3s ease;
+  pointer-events: none;
+}
+
+.input-group input:focus + label,
+.input-group input:not(:placeholder-shown) + label,
+.input-group textarea:focus + label,
+.input-group textarea:not(:placeholder-shown) + label {
+  top: -10px;
+  left: 12px;
+  background: #fff;
+  padding: 0 6px;
+  font-size: 12px;
+  color: #7c3aed;
+}
+
+/* Button */
+.send-btn {
+  grid-column: span 2;
+  padding: 14px;
+  border-radius: 999px;
+  border: none;
+  background: linear-gradient(90deg,#8b5cf6,#7c3aed);
+  color: #fff;
+  font-weight: 600;
+  margin-top: 10px;
+  box-shadow: 0 10px 25px rgba(124,58,237,.3);
+  cursor: pointer;
+}
+
+/* Social */
+.contact-socials {
+  display: flex;
+  justify-content: center;
+  gap: 16px;
+  margin: 30px 0;
+}
+
+.contact-socials a {
+  width: 44px;
+  height: 44px;
+  border-radius: 50%;
+  border: 1px solid #d1d5db;
+  display: grid;
+  place-items: center;
+  transition: all .3s ease;
+}
+
+.contact-socials a:hover {
+  border-color: #8b5cf6;
+  color: #8b5cf6;
+  background: rgba(139,92,246,.1);
+}
+
+/* Responsive */
+@media(max-width:768px){
+  .contact-form{
+    grid-template-columns:1fr;
+    padding: 28px;
+  }
+
+  .input-group.full,
+  .send-btn{
+    grid-column: span 1;
+  }
+}

@@ -1,62 +1,52 @@
 "use client";
 
 import Image from "next/image";
-import { motion } from "framer-motion";
+import { motion, useMotionValue, useTransform } from "framer-motion";
 import "../styles/home.css";
 import {
   FaLinkedinIn,
-  FaBehance,
   FaInstagram,
   FaYoutube,
-  FaPinterestP,
+  FaGithub,
 } from "react-icons/fa";
 
-/* ===============================
-   MOTION VARIANTS
-================================ */
-const fadeUp = {
-  hidden: { opacity: 0, y: 40 },
-  show: {
-    opacity: 1,
-    y: 0,
-    transition: { duration: 0.8, ease: "easeOut" },
-  },
-};
-
-const stagger = {
-  hidden: {},
-  show: {
-    transition: { staggerChildren: 0.15 },
-  },
-};
-
 export default function Home() {
+
+  const x = useMotionValue(0);
+  const y = useMotionValue(0);
+
+  const rotateX = useTransform(y, [-100, 100], [8, -8]);
+  const rotateY = useTransform(x, [-100, 100], [-8, 8]);
+
+  function handleMouseMove(e) {
+    const rect = e.currentTarget.getBoundingClientRect();
+    x.set(e.clientX - rect.left - rect.width / 2);
+    y.set(e.clientY - rect.top - rect.height / 2);
+  }
+
   return (
     <section id="home" className="home-wrap">
 
       {/* LEFT PROFILE CARD */}
       <motion.div
         className="profile-card"
-        variants={fadeUp}
-        initial="hidden"
-        animate="show"
+        onMouseMove={handleMouseMove}
+        style={{ rotateX, rotateY }}
+        initial={{ opacity: 0, y: 80 }}
+        animate={{ opacity: 1, y: 0 }}
+        transition={{ duration: 0.8 }}
       >
         <div className="profile-top">
           <div className="icon">
             <Image src="/icon.png" alt="Logo" width={24} height={24} />
           </div>
-
-          <h2>
-            shubham <br /> Jare
-          </h2>
+          <h2>Shubham <br /> Jare</h2>
         </div>
 
-        {/* AVATAR */}
         <motion.div
           className="avatar"
-          initial={{ scale: 0.9, opacity: 0 }}
-          animate={{ scale: 1, opacity: 1 }}
-          transition={{ duration: 0.8, delay: 0.2 }}
+          animate={{ y: [0, -8, 0] }}
+          transition={{ duration: 4, repeat: Infinity }}
         >
           <Image
             src="/avatar.png"
@@ -69,84 +59,60 @@ export default function Home() {
 
         <div className="info">
           <span>Specialization:</span>
-          <p>AI&ML<br />and Web Designer</p>
+          <p>AI & Full Stack Engineer</p>
 
           <span>Based in:</span>
           <p>Maharashtra, India</p>
         </div>
 
-        {/* SOCIAL ICONS */}
         <div className="socials">
-          {[FaLinkedinIn, FaBehance, FaInstagram, FaYoutube, FaPinterestP].map(
-            (Icon, i) => (
-              <motion.a
-                key={i}
-                whileHover={{ y: -4, scale: 1.05 }}
-                whileTap={{ scale: 0.95 }}
-                href="#"
-              >
-                <Icon />
-              </motion.a>
-            )
-          )}
+          <a href="https://www.linkedin.com/in/shubham-jare-232645362" target="_blank"><FaLinkedinIn /></a>
+          <a href="https://www.instagram.com/devwithshubham_" target="_blank"><FaInstagram /></a>
+          <a href="https://www.youtube.com/channel/UC1fxqmDsUQXDxATTBtwvoCg" target="_blank"><FaYoutube /></a>
+          <a href="https://github.com/smjare07-art" target="_blank"><FaGithub /></a>
         </div>
 
-        <motion.button
+        <a
+          href="https://wa.me/6283163861179"
+          target="_blank"
           className="work-btn"
-          whileHover={{ scale: 1.05 }}
-          whileTap={{ scale: 0.96 }}
         >
           Let’s Work Together!
-        </motion.button>
+        </a>
       </motion.div>
 
       {/* RIGHT HERO CONTENT */}
       <motion.div
         className="hero"
-        variants={stagger}
-        initial="hidden"
-        animate="show"
+        initial={{ opacity: 0 }}
+        animate={{ opacity: 1 }}
+        transition={{ delay: 0.3 }}
       >
-        <motion.span className="meet" variants={fadeUp}>
-          ✨ Let’s meet!
-        </motion.span>
+        <span className="meet">✨ Let’s meet!</span>
 
-        <motion.h1 variants={fadeUp}>
-          I’m Shubham <br />
-          <span>Developer,</span> <br />
-          Web Designer.
+        <motion.h1
+          initial={{ opacity: 0, y: 40 }}
+          animate={{ opacity: 1, y: 0 }}
+          transition={{ delay: 0.5 }}
+        >
+          Building Intelligent <br />
+          <span>AI Systems &</span> <br />
+          Scalable Web Apps.
         </motion.h1>
 
-        <motion.div className="actions" variants={fadeUp}>
-          <motion.button
-            className="outline"
-            whileHover={{ scale: 1.05 }}
-            whileTap={{ scale: 0.96 }}
-          >
+        <div className="actions">
+          <a href="#projects" className="outline">
             My Works ⬚
-          </motion.button>
+          </a>
 
-          <motion.button
-            className="primary"
-            whileHover={{ scale: 1.05 }}
-            whileTap={{ scale: 0.96 }}
-          >
-            Download CV ⬇
-          </motion.button>
-        </motion.div>
+          <a href="/shubham-jare-cv.pdf" target="_blank" className="primary">
+            View CV ⬇
+          </a>
+        </div>
       </motion.div>
 
-      {/* FLOATING BLURS */}
-      <motion.div
-        className="blur purple"
-        animate={{ y: [0, -20, 0] }}
-        transition={{ duration: 6, repeat: Infinity, ease: "easeInOut" }}
-      />
-      <motion.div
-        className="blur pink"
-        animate={{ y: [0, 20, 0] }}
-        transition={{ duration: 7, repeat: Infinity, ease: "easeInOut" }}
-      />
+      <div className="blur purple" />
+      <div className="blur pink" />
     </section>
   );
 }

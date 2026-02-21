@@ -118,3 +118,184 @@
     font-size: 13px;
   }
 }
+/* ===============================
+   DARK MODE WRAPPER
+================================ */
+body.dark .navbar-box {
+  background: rgba(15, 23, 42, 0.75);
+  backdrop-filter: blur(18px);
+  box-shadow: 0 12px 36px rgba(0, 0, 0, 0.4);
+}
+
+/* ===============================
+   DARK ACTIVE INDICATOR
+================================ */
+body.dark .nav-indicator {
+  background: rgba(30, 41, 59, 0.9);
+  border: 1px solid rgba(255, 255, 255, 0.08);
+}
+
+/* ===============================
+   DARK NAV ITEMS
+================================ */
+body.dark .nav-item {
+  color: #94a3b8;
+}
+
+body.dark .nav-item:hover {
+  color: #ffffff;
+}
+
+body.dark .nav-item.active {
+  color: #ffffff;
+}
+
+/* ===============================
+   DARK THEME BUTTON
+================================ */
+body.dark .theme-btn {
+  color: #facc15;
+}
+
+body.dark .theme-btn:hover {
+  background: rgba(255, 255, 255, 0.08);
+}
+
+/* ===============================
+   DARK CTA BUTTON
+================================ */
+body.dark .cta-btn {
+  background: linear-gradient(90deg, #6366f1, #8b5cf6);
+  box-shadow: 0 6px 20px rgba(99, 102, 241, 0.5);
+}
+.navbar {
+  position: fixed;
+  top: 20px;
+  left: 50%;
+  transform: translateX(-50%);
+  z-index: 100;
+  transition: all 0.3s ease;
+}
+
+.navbar.scrolled {
+  top: 12px;
+  transform: translateX(-50%) scale(0.97);
+}
+
+/* Container */
+.navbar-box {
+  position: relative;
+  display: flex;
+  align-items: center;
+  gap: 6px;
+  padding: 8px;
+  border-radius: 9999px;
+  background: rgba(255, 255, 255, 0.75);
+  backdrop-filter: blur(20px);
+  box-shadow: 0 12px 36px rgba(0, 0, 0, 0.08);
+  transition: all 0.3s ease;
+}
+
+/* Active Indicator */
+.nav-indicator {
+  position: absolute;
+  top: 6px;
+  height: calc(100% - 12px);
+  background: #ffffff;
+  border-radius: 9999px;
+  border: 1px solid #e5e7eb;
+  transition: all 0.35s cubic-bezier(0.25, 1, 0.5, 1);
+  z-index: 0;
+}
+
+/* Nav Items */
+.nav-item {
+  position: relative;
+  z-index: 1;
+  padding: 8px 20px;
+  font-size: 14px;
+  font-weight: 500;
+  color: #6b7280;
+  cursor: pointer;
+  transition: all 0.25s ease;
+}
+
+.nav-item:hover {
+  color: #000;
+  transform: translateY(-2px);
+}
+
+.nav-item.active {
+  color: #000;
+}
+
+/* Theme Button */
+.theme-btn {
+  height: 40px;
+  width: 40px;
+  border-radius: 50%;
+  display: grid;
+  place-items: center;
+  cursor: pointer;
+  transition: all 0.25s ease;
+}
+
+.theme-btn:hover {
+  background: #f3f4f6;
+  transform: rotate(15deg);
+}
+
+/* CTA Button */
+.cta-btn {
+  margin-left: 4px;
+  padding: 8px 22px;
+  border-radius: 9999px;
+  font-size: 14px;
+  font-weight: 600;
+  color: #fff;
+  background: linear-gradient(90deg, #8b5cf6, #7c3aed);
+  box-shadow: 0 6px 18px rgba(124, 58, 237, 0.35);
+  transition: all 0.3s ease;
+  position: relative;
+  overflow: hidden;
+}
+
+.cta-btn:hover {
+  transform: scale(1.05);
+  box-shadow: 0 8px 24px rgba(124, 58, 237, 0.6);
+}
+
+/* Dark Mode */
+body.dark .navbar-box {
+  background: rgba(15, 23, 42, 0.75);
+  box-shadow: 0 12px 36px rgba(0, 0, 0, 0.4);
+}
+
+body.dark .nav-indicator {
+  background: rgba(30, 41, 59, 0.9);
+}
+
+body.dark .nav-item {
+  color: #94a3b8;
+}
+
+body.dark .nav-item.active,
+body.dark .nav-item:hover {
+  color: #ffffff;
+}
+
+body.dark .cta-btn {
+  background: linear-gradient(90deg, #6366f1, #8b5cf6);
+}
+
+/* Mobile */
+@media (max-width: 768px) {
+  .navbar {
+    top: auto;
+    bottom: 16px;
+  }
+
+  .cta-btn {
+    display: none;
+  }
+}
