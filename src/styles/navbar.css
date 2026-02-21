@@ -299,3 +299,82 @@ body.dark .cta-btn {
     display: none;
   }
 }
+/* ===============================
+   MOBILE RESPONSIVE UPGRADE
+================================ */
+@media (max-width: 768px) {
+
+  /* Navbar bottom floating */
+  .navbar {
+    top: auto;
+    bottom: 14px;
+    width: 100%;
+    display: flex;
+    justify-content: center;
+    padding: 0 10px;
+  }
+
+  /* Full width glass effect */
+  .navbar-box {
+    width: 100%;
+    max-width: 420px;
+    justify-content: space-between;
+    padding: 10px 14px;
+    border-radius: 20px;
+  }
+
+  /* Nav Items compact */
+  .nav-item {
+    padding: 6px 10px;
+    font-size: 12px;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    gap: 3px;
+  }
+
+  /* Hide text if you use icons */
+  .nav-item span {
+    font-size: 11px;
+  }
+
+  /* Indicator adjust */
+  .nav-indicator {
+    top: 5px;
+    height: calc(100% - 10px);
+  }
+
+  /* Hide CTA on mobile */
+  .cta-btn {
+    display: none;
+  }
+
+  /* Theme button smaller */
+  .theme-btn {
+    height: 34px;
+    width: 34px;
+  }
+
+}
+@media (max-width: 768px) {
+
+  .nav-item {
+    font-size: 0;
+  }
+
+  .nav-item svg {
+    width: 20px;
+    height: 20px;
+  }
+
+}
+@media (max-width: 768px) {
+  .navbar-box {
+    backdrop-filter: blur(25px);
+    background: rgba(255,255,255,0.85);
+  }
+
+  body.dark .navbar-box {
+    background: rgba(15,23,42,0.9);
+  }
+}
