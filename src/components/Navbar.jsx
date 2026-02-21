@@ -20,6 +20,7 @@ export default function Navbar() {
   const navRef = useRef(null);
   const indicatorRef = useRef(null);
 
+  // Load saved theme
   useEffect(() => {
     const savedTheme = localStorage.getItem("theme");
     if (savedTheme === "dark") {
@@ -28,6 +29,7 @@ export default function Navbar() {
     }
   }, []);
 
+  // Toggle dark mode
   useEffect(() => {
     if (darkMode) {
       document.body.classList.add("dark");
@@ -38,6 +40,7 @@ export default function Navbar() {
     }
   }, [darkMode]);
 
+  // Scroll effect
   useEffect(() => {
     const handleScroll = () => {
       setScrolled(window.scrollY > 40);
@@ -46,17 +49,26 @@ export default function Navbar() {
     return () => window.removeEventListener("scroll", handleScroll);
   }, []);
 
+  // ✅ FIXED INDICATOR LOGIC (Mobile + Resize Safe)
   useEffect(() => {
-    if (!navRef.current || !indicatorRef.current) return;
+    const updateIndicator = () => {
+      if (!navRef.current || !indicatorRef.current) return;
 
-    const activeEl = navRef.current.querySelector(
-      `[data-id="${active}"]`
-    );
+      const activeEl = navRef.current.querySelector(
+        `[data-id="${active}"]`
+      );
 
-    if (activeEl) {
-      indicatorRef.current.style.width = `${activeEl.offsetWidth}px`;
-      indicatorRef.current.style.left = `${activeEl.offsetLeft}px`;
-    }
+      if (activeEl) {
+        indicatorRef.current.style.width = `${activeEl.offsetWidth}px`;
+        indicatorRef.current.style.left = `${activeEl.offsetLeft}px`;
+      }
+    };
+
+    updateIndicator();
+
+    window.addEventListener("resize", updateIndicator);
+
+    return () => window.removeEventListener("resize", updateIndicator);
   }, [active]);
 
   const handleClick = (id) => {
