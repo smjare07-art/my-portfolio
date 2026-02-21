@@ -444,3 +444,196 @@ body.dark .cta-btn {
   }
 
 }
+/* ===============================
+   NAVBAR WRAPPER
+================================ */
+.navbar {
+  position: fixed;
+  top: 20px;
+  left: 50%;
+  transform: translateX(-50%);
+  z-index: 100;
+  transition: all 0.3s ease;
+}
+
+.navbar.scrolled {
+  top: 12px;
+  transform: translateX(-50%) scale(0.97);
+}
+
+/* ===============================
+   NAVBAR CONTAINER
+================================ */
+.navbar-box {
+  position: relative;
+  display: flex;
+  align-items: center;
+  gap: 6px;
+  padding: 8px;
+  border-radius: 9999px;
+  background: rgba(255, 255, 255, 0.75);
+  backdrop-filter: blur(20px);
+  box-shadow: 0 12px 36px rgba(0, 0, 0, 0.08);
+  transition: all 0.3s ease;
+}
+
+/* ===============================
+   SLIDING ACTIVE INDICATOR
+================================ */
+.nav-indicator {
+  position: absolute;
+  top: 6px;
+  height: calc(100% - 12px);
+  background: #ffffff;
+  border-radius: 9999px;
+  border: 1px solid #e5e7eb;
+  transition: all 0.35s cubic-bezier(0.25, 1, 0.5, 1);
+  z-index: 0;
+}
+
+/* ===============================
+   NAV ITEMS
+================================ */
+.nav-item {
+  position: relative;
+  z-index: 1;
+  padding: 8px 20px;
+  font-size: 14px;
+  font-weight: 500;
+  color: #6b7280;
+  cursor: pointer;
+  transition: all 0.25s ease;
+  white-space: nowrap;
+}
+
+.nav-item:hover {
+  color: #000;
+  transform: translateY(-2px);
+}
+
+.nav-item.active {
+  color: #000;
+}
+
+/* ===============================
+   THEME BUTTON
+================================ */
+.theme-btn {
+  height: 40px;
+  width: 40px;
+  border-radius: 50%;
+  display: grid;
+  place-items: center;
+  cursor: pointer;
+  transition: all 0.25s ease;
+}
+
+.theme-btn:hover {
+  background: #f3f4f6;
+  transform: rotate(15deg);
+}
+
+/* ===============================
+   CTA BUTTON
+================================ */
+.cta-btn {
+  margin-left: 4px;
+  padding: 8px 22px;
+  border-radius: 9999px;
+  font-size: 14px;
+  font-weight: 600;
+  color: #fff;
+  background: linear-gradient(90deg, #8b5cf6, #7c3aed);
+  box-shadow: 0 6px 18px rgba(124, 58, 237, 0.35);
+  transition: all 0.3s ease;
+}
+
+.cta-btn:hover {
+  transform: scale(1.05);
+  box-shadow: 0 8px 24px rgba(124, 58, 237, 0.6);
+}
+
+/* ===============================
+   DARK MODE
+================================ */
+body.dark .navbar-box {
+  background: rgba(15, 23, 42, 0.75);
+  box-shadow: 0 12px 36px rgba(0, 0, 0, 0.4);
+}
+
+body.dark .nav-indicator {
+  background: rgba(30, 41, 59, 0.9);
+}
+
+body.dark .nav-item {
+  color: #94a3b8;
+}
+
+body.dark .nav-item.active,
+body.dark .nav-item:hover {
+  color: #ffffff;
+}
+
+body.dark .cta-btn {
+  background: linear-gradient(90deg, #6366f1, #8b5cf6);
+}
+
+/* ===============================
+   MOBILE VERSION (CLEAN)
+================================ */
+@media (max-width: 768px) {
+
+  .navbar {
+    top: auto;
+    bottom: 18px;
+    width: 100%;
+    display: flex;
+    justify-content: center;
+    padding: 0 16px;
+  }
+
+  .navbar-box {
+    width: 100%;
+    max-width: 380px;
+    justify-content: space-around;
+    padding: 12px 16px;
+    border-radius: 24px;
+    backdrop-filter: blur(25px);
+    background: rgba(255,255,255,0.9);
+    box-shadow: 0 20px 40px rgba(0,0,0,0.15);
+  }
+
+  body.dark .navbar-box {
+    background: rgba(15,23,42,0.9);
+  }
+
+  .nav-indicator {
+    display: none;
+  }
+
+  .nav-item {
+    padding: 6px;
+    font-size: 0;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+  }
+
+  .nav-item svg {
+    width: 22px;
+    height: 22px;
+  }
+
+  .nav-item.active svg {
+    transform: scale(1.2);
+  }
+
+  .cta-btn {
+    display: none;
+  }
+
+  .theme-btn {
+    width: 36px;
+    height: 36px;
+  }
+}
