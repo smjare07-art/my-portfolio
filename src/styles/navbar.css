@@ -147,3 +147,24 @@ body.dark .cta-btn {
   }
 
 }
+/* ===============================
+   MOBILE FULL WIDTH NAVBAR FIX
+================================ */
+@media (max-width: 768px) {
+
+  .navbar {
+    left: 0;
+    transform: none;
+    width: 100%;
+    padding: 0 12px;
+    bottom: 16px;
+    top: auto;
+  }
+
+  .navbar-box {
+    width: 100%;
+    max-width: 100%;
+    justify-content: space-between;
+  }
+
+}
