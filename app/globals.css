@@ -2,13 +2,27 @@
 @tailwind components;
 @tailwind utilities;
 
+/* ===============================
+   GLOBAL RESET + MOBILE FIX
+================================ */
+
+*,
+*::before,
+*::after {
+  box-sizing: border-box;
+}
+
 html, body {
   height: 100%;
   scroll-behavior: smooth;
+  overflow-x: hidden;   /* 🔥 FIX RIGHT SIDE WHITE SPACE */
+  max-width: 100%;
 }
 
 body {
-  background: #f7f8fc;   /* image-like light bg */
+  margin: 0;
+  padding: 0;
+  background: #f7f8fc;
   color: #0a0a0a;
   font-family: Inter, system-ui, -apple-system, sans-serif;
 }
@@ -19,8 +33,11 @@ body {
   color: #fff;
 }
 
-/* smooth scrollbar (optional but matches premium UI) */
-::-webkit-scrollbar { width: 8px; }
+/* smooth scrollbar */
+::-webkit-scrollbar {
+  width: 8px;
+}
+
 ::-webkit-scrollbar-thumb {
   background: rgba(124,58,237,.5);
   border-radius: 10px;
