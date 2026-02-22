@@ -168,3 +168,25 @@ body.dark .cta-btn {
   }
 
 }
+/* ===============================
+   MOBILE FULL WIDTH NAVBAR
+================================ */
+@media (max-width: 768px) {
+
+  .navbar {
+    left: 0;
+    transform: none;
+    width: 100%;
+    padding: 0;
+    bottom: 0;
+    top: auto;
+  }
+
+  .navbar-box {
+    width: 100%;
+    max-width: 100%;
+    border-radius: 0;   /* 🔥 full edge to edge */
+    justify-content: space-around;
+  }
+
+}
