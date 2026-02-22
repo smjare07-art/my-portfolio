@@ -29,6 +29,7 @@ export default function Navbar() {
     }
   }, []);
 
+  // Toggle theme
   useEffect(() => {
     if (darkMode) {
       document.body.classList.add("dark");
@@ -39,6 +40,7 @@ export default function Navbar() {
     }
   }, [darkMode]);
 
+  // Scroll shrink effect
   useEffect(() => {
     const handleScroll = () => {
       setScrolled(window.scrollY > 40);
@@ -47,10 +49,18 @@ export default function Navbar() {
     return () => window.removeEventListener("scroll", handleScroll);
   }, []);
 
-  // ✅ SUPER FIXED INDICATOR (Desktop + Mobile Safe)
+  // FINAL STABLE INDICATOR LOGIC
   useEffect(() => {
     const updateIndicator = () => {
       if (!navRef.current || !indicatorRef.current) return;
+
+      // Hide indicator on mobile
+      if (window.innerWidth <= 768) {
+        indicatorRef.current.style.display = "none";
+        return;
+      } else {
+        indicatorRef.current.style.display = "block";
+      }
 
       const activeEl = navRef.current.querySelector(
         `[data-id="${active}"]`
@@ -62,13 +72,11 @@ export default function Navbar() {
       const activeRect = activeEl.getBoundingClientRect();
 
       indicatorRef.current.style.width = `${activeRect.width}px`;
-      indicatorRef.current.style.left = `${
-        activeRect.left - navRect.left
-      }px`;
+      indicatorRef.current.style.left =
+        `${activeRect.left - navRect.left}px`;
     };
 
     updateIndicator();
-
     window.addEventListener("resize", updateIndicator);
 
     return () => window.removeEventListener("resize", updateIndicator);
