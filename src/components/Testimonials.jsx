@@ -14,7 +14,7 @@ export default function Testimonials() {
       text: "Shubham built a CNN-based crop disease detection system with strong backend integration and clean architecture.",
     },
     {
-      img: "/person2.jpg",
+      img: "/person2.png",
       name: "Frontend Lead",
       role: "Internship Team",
       text: "His React and Next.js implementations are clean, scalable and optimized for performance.",
