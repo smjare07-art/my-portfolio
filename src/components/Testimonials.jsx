@@ -8,7 +8,7 @@ export default function Testimonials() {
 
   const testimonials = [
     {
-      img: "/person1.jpg",
+      img: "/om.png",
       name: "Project Mentor",
       role: "AI & Web Development",
       text: "Shubham built a CNN-based crop disease detection system with strong backend integration and clean architecture.",
