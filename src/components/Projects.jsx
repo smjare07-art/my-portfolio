@@ -28,6 +28,12 @@ const projects = [
     github: "https://github.com/smjare07-art/flow-charts-for-algorithms",
     report: "/reports/project4.pdf",
   },
+  {
+    img: "/project5.png",
+    tags: ["FastAPI", "GitHub API", "AI Tools", "Full Stack"],
+    github: "https://github.com/smjare07-art/gitgenie-ai",
+    report: "/reports/gitgenie-report.pdf",
+  },
 ];
 
 export default function Projects() {

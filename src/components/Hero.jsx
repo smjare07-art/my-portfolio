@@ -1,5 +1,5 @@
 "use client";
-
+import Avatar3D from "../components/Avatar3D";
 import { motion } from "framer-motion";
 
 export default function Hero() {
