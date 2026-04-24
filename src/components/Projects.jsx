@@ -96,7 +96,7 @@ export default function Projects() {
                 </a>
 
                 <a href={p.report} target="_blank" className="project-btn solid">
-                  Report ⬇
+                  Report 
                 </a>
               </div>
             </motion.div>
