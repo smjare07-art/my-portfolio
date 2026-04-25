@@ -88,7 +88,7 @@ export default function Home() {
         animate={{ opacity: 1 }}
         transition={{ delay: 0.3 }}
       >
-        <span className="meet">✨ Let’s meet!</span>
+        <span className="meet"> Let’s meet!</span>
 
         <motion.h1
           initial={{ opacity: 0, y: 40 }}
@@ -102,7 +102,7 @@ export default function Home() {
 
         <div className="actions">
           <a href="#projects" className="outline">
-            My Works ⬚
+            My Works 
           </a>
 
           <a href="/shubham-jare-cv.pdf" target="_blank" className="primary">

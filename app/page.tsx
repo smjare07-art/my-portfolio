@@ -8,6 +8,7 @@ import About from "../src/components/About";
 import Resume from "../src/components/Resume";
 import Testimonials from "../src/components/Testimonials";
 import Contact from "../src/components/Contact";
+import Certifications from "../src/components/Certifications";
 export default function Page() {
   return (
     <>
@@ -19,6 +20,8 @@ export default function Page() {
 
       {/* Projects Section */}
       <Projects />
+      {/* Certifications Section */}
+      <Certifications />
       {/* About Section */}
       <About />
       {/* Resume Section */}
