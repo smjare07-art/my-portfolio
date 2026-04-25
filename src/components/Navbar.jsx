@@ -125,7 +125,7 @@ export default function Navbar() {
           rel="noopener noreferrer"
           className="cta-btn"
         >
-          Let’s Talk 💬
+          Let’s Talk 
         </a>
       </div>
     </motion.nav>

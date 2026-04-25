@@ -106,7 +106,7 @@ export default function Home() {
           </a>
 
           <a href="/shubham-jare-cv.pdf" target="_blank" className="primary">
-            View CV ⬇
+            View CV 
           </a>
         </div>
       </motion.div>

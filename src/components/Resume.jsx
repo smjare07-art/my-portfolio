@@ -31,7 +31,7 @@ export default function Resume() {
         variants={fadeUp}
         viewport={{ once: true }}
       >
-        ✦ Resume
+        Resume
       </motion.span>
 
       <motion.h2

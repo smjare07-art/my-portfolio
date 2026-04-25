@@ -58,7 +58,7 @@ ${formData.message}
   return (
     <section id="contact" className="contact-wrap">
 
-      <span className="section-pill">✦ Contact</span>
+      <span className="section-pill">Contact</span>
 
       <h2 className="contact-title">
         Let’s build something impactful
